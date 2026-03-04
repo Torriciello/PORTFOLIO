@@ -1,0 +1,137 @@
+/* 1. Importação da Fonte Montserrat do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Garante que não haja barras de rolagem e ocupe tudo */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 2. Aplicação da fonte em todo o corpo */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+/* LADO ESQUERDO */
+.login-form-side {
+    flex: 1;
+    padding: 5% 8%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* MUDANÇA AQUI: de flex-start para center */
+    align-items: center; 
+    text-align: center; /* Garante que os textos h2 e h3 também centralizem */
+}
+
+/* Estilização dos Textos com a nova fonte */
+h2 {
+    font-size: 30px;
+    font-weight: 700; /* Bold para o "Olá" */
+    margin: 0;
+    color: #333;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 400; /* Regular para o subtítulo */
+    color: #666;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+
+/* FORMULÁRIO */
+.login-form-side {
+    width: 100%;
+    max-width: 550px; 
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 22px; 
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 18px;
+    /* Garante que o texto digitado também use a Montserrat */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #76c893;
+}
+
+/* BOTÕES */
+.buttons-row {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    /* Peso 600 (Semi-bold) para botões ficarem elegantes */
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.btn-login { background-color: #76c893; color: white; }
+.btn-create { background-color: white; border: 2px solid #76c893; color: #76c893; }
+
+/* LADO DIREITO - Ajustado para ser ultra responsivo */
+.login-image-side {
+    flex: 1.5; 
+    height: 100vh; /* Ocupa exatamente a altura da tela visível */
+    overflow: hidden; /* Garante que a imagem não "vaze" para fora */
+}
+
+.login-image-side img {
+    width: 100%; 
+    height: 100%;
+    display: block; /* Remove espaços vazios estranhos abaixo da imagem */
+    object-fit: cover; /* Faz a imagem se adaptar ao tamanho sem esticar */
+    object-position: center; /* Mantém o foco da ilustração sempre no meio */
+    transition: width 0.1s ease-out; /* Opcional: deixa o redimensionamento mais suave */
+}
+
+/* Quando a tela for menor que 768px (largura de um tablet/celular) */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column; /* Empilha o formulário e a imagem */
+    }
+
+    .login-image-side {
+        display: none; /* Esconde a imagem em telas muito pequenas para focar no login */
+    }
+
+    .login-form-side {
+        flex: 1;
+        width: 100%;
+        padding: 40px 20px;
+    }
+}
