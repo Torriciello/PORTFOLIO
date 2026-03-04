@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="login-card">
+        <div class="diagonal"></div>
+
+        <div class="form">
+          <h2 class="login">Login</h2>
+          <br>
+          <form action="login">
+            <div class="input-group">
+              <label for="email">Username</label>
+              <div class="input-with-icon">
+                <input type="email" id="email" name="email" required />
+                <i class="fas fa-user icon"></i>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <div class="input-with-icon">
+                <input type="password" id="password" name="password" required />
+                <i class="fas fa-lock icon"></i>
+              </div>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+          </form>
+
+          <div class="signup-link">
+            Don't have an account? <a href="#">Sign Up</a>
+          </div>
+        </div>
+
+        <div class="welcome-side">
+          <h1>WELCOME BACK!</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
