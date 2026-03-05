@@ -1,0 +1,39 @@
+.form-area h1{
+  font-size:40px;
+  margin-bottom:30px;
+  color: #000000;
+}
+
+.form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.form input{
+  height:45px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  padding-left:15px;
+  font-size:14px;
+}
+
+.options{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  color: #000000;
+}
+
+.options a{
+  color:#1e88ff;
+  text-decoration:none;
+  color: #000000;
+}
+
+.buttons{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+

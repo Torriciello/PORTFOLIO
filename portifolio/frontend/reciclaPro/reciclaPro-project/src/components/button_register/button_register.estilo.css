@@ -1,0 +1,10 @@
+.btn-register{
+  background:white;
+  border:1px solid #6bbf9f;
+
+  border-radius:10px;
+  padding:12px 30px;
+
+  color:#6bbf9f;
+  cursor:pointer;
+}
