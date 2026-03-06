@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import "./dialog.estilo.css";
 
 export function Dialog() {
   const dialogRef = useRef(null);
