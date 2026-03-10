@@ -24,6 +24,6 @@ public class PatientService {
     }
 
     public Page<Patient> findAllByAtivoTrue(Pageable pageable) {
-    return patientRepository.findAllByAtivoTrue(pageable);
-}
+        return patientRepository.findAllByAtivoTrue(pageable);
+    }
 }
