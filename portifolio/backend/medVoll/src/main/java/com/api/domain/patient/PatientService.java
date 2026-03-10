@@ -26,4 +26,8 @@ public class PatientService {
     public Page<Patient> findAllByAtivoTrue(Pageable pageable) {
         return patientRepository.findAllByAtivoTrue(pageable);
     }
+
+    public Patient getReferenceById(Long id) {
+        return patientRepository.getReferenceById(id);
+    }
 }

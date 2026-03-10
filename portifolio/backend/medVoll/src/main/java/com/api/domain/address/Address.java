@@ -30,28 +30,28 @@ public class Address {
         this.number = dateAdress.number();
         this.complement = dateAdress.complement();
     }
-    
-    public void updateAdress(DateAdress dateAdress) {
-        if (dateAdress.publicPlace() != null) {
-            this.publicPlace = dateAdress.publicPlace();
+
+    public void updateAdress(Address address) {
+        if (address.getPublicPlace() != null) {
+            this.publicPlace = address.getPublicPlace();
         }
-        if (dateAdress.neighborhood() != null) {
-            this.neighborhood = dateAdress.neighborhood();
+        if (address.getNeighborhood() != null) {
+            this.neighborhood = address.getNeighborhood();
         }
-        if (dateAdress.cep() != null) {
-            this.cep = dateAdress.cep();
+        if (address.getCep() != null) {
+            this.cep = address.getCep();
         }
-        if (dateAdress.uf() != null) {
-            this.uf = dateAdress.uf();
+        if (address.getUf() != null) {
+            this.uf = address.getUf();
         }
-        if (dateAdress.city() != null) {
-            this.city = dateAdress.city();
+        if (address.getCity() != null) {
+            this.city = address.getCity();
         }
-        if (dateAdress.number() != null) {
-            this.number = dateAdress.number();
+        if (address.getNumber() != null) {
+            this.number = address.getNumber();
         }
-        if (dateAdress.complement() != null) {
-            this.complement = dateAdress.complement();
+        if (address.getComplement() != null) {
+            this.complement = address.getComplement();
         }
     }
 }

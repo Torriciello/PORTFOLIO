@@ -39,13 +39,38 @@ public class Doctor {
 
     private String crm;
 
+    private String phone;
+
+    private Boolean ativo;
+
     @Embedded
     @NotNull(message = "O endereço é obrigatório")
     @Valid
     private Address address;
 
+    public Doctor(DoctorDetails doctorDetails) {
+        this.ativo = true;
+        this.name = doctorDetails.name();
+        this.phone = doctorDetails.phone();
+        this.crm = doctorDetails.crm();
+        this.especialidade = doctorDetails.especialidade();
+        this.address = new Address();
+    }
 
+    public void update(UpdateDoctor updateDoctor) {
+        if (updateDoctor.name() != null) {
+            this.name = updateDoctor.name();
+        }
+        if (updateDoctor.phone() != null) {
+            this.phone = updateDoctor.phone();
+        }
+        if (updateDoctor.address() != null) {
+            this.address.updateAdress(address);
+        }
+    }
 
-
+    public void excluir() {
+        this.ativo = false;
+    }
 
 }

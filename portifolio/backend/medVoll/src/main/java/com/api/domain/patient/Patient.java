@@ -48,7 +48,7 @@ public class Patient {
             this.phone = updatePatient.telefone();
         }
         if (updatePatient.address() != null) {
-            this.address.updateAdress(updatePatient.address());
+            this.address.updateAdress(address);
         }
     }
 
