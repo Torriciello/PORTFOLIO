@@ -2,7 +2,7 @@ package com.api.domain.doctor;
 
 import com.api.domain.address.Address;
 
-public record DoctorDetails(Long id, String name, String phone, Especialidade especialidade, String cpf, String crm,
+public record DoctorDetails(Long id, String name, String phone, Specialty especialidade, String cpf, String crm,
         Address address) {
 
     public DoctorDetails(Doctor doctor) {

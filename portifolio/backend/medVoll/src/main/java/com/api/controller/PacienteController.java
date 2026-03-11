@@ -59,9 +59,9 @@ public class PacienteController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         var patient = patientService.getReferenceById(id);
-        patient.excluir();
+        patient.delete();
         return ResponseEntity.noContent().build();
     }
 

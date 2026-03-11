@@ -38,7 +38,7 @@ public class Patient {
         this.ativo = true;
         this.name = registerPatient.name();
         this.email = registerPatient.email();
-        this.phone = registerPatient.telefone();
+        this.phone = registerPatient.phone();
         this.cpf = registerPatient.cpf();
         this.address = new Address();
     }
@@ -55,7 +55,7 @@ public class Patient {
         }
     }
 
-    public void excluir() {
+    public void delete() {
         this.ativo = false;
     }
 

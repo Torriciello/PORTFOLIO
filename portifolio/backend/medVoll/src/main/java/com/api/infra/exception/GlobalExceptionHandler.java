@@ -19,18 +19,18 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<List<DadosErroValidacao>> tratarErro400(MethodArgumentNotValidException ex) {
+    public ResponseEntity<List<DataErrorValidation>> tratarErro400(MethodArgumentNotValidException ex) {
 
         var erros = ex.getFieldErrors();
         var listaErros = erros.stream()
-                .map(DadosErroValidacao::new)
+                .map(DataErrorValidation::new)
                 .toList();
         return ResponseEntity.badRequest().body(listaErros);
     }
 
-    private record DadosErroValidacao(String campo, String mensagem) {
-        public DadosErroValidacao(FieldError erro) {
-            this(erro.getField(), erro.getDefaultMessage());
+    private record DataErrorValidation(String field, String message) {
+        public DataErrorValidation(FieldError error) {
+            this(error.getField(), error.getDefaultMessage());
         }
     }
 

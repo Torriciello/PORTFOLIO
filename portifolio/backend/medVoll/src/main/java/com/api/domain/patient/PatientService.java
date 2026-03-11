@@ -45,7 +45,7 @@ public class PatientService {
     }
 
     public void excluir(Long id) {
-    var patient = patientRepository.getReferenceById(id);
-    patient.excluir();
-}
+        var patient = patientRepository.getReferenceById(id);
+        patient.delete();
+    }
 }

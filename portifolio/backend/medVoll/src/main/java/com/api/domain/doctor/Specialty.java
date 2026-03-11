@@ -1,6 +1,6 @@
 package com.api.domain.doctor;
 
-public enum Especialidade {
+public enum Specialty {
 
     GINECOLOGIA,
     ORTOPEDIA,

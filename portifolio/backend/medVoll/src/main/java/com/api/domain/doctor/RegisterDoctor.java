@@ -15,7 +15,7 @@ public record RegisterDoctor(
 
         @NotBlank String phone,
 
-        @NotNull Especialidade especialidade,
+        @NotNull Specialty especialidade,
 
         @NotNull @Valid Address address
 

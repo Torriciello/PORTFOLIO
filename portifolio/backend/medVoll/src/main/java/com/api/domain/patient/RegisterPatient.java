@@ -16,7 +16,7 @@ public record RegisterPatient(
         String email,
 
         @NotBlank
-        String telefone,
+        String phone,
         
         @NotBlank
         @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}")

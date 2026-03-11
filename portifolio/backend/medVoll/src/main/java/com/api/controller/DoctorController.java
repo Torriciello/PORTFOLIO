@@ -39,7 +39,7 @@ public class DoctorController {
     }
 
     @GetMapping
-    public Page<DoctorDetails> list(@PageableDefault(size = 10, sort = { "nome" }) Pageable pageable) {
+    public Page<DoctorDetails> list(@PageableDefault(size = 10, sort = { "name" }) Pageable pageable) {
         return doctorService.findAllByAtivoTrue(pageable).map(DoctorDetails::new);
     }
 
@@ -52,9 +52,9 @@ public class DoctorController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public void excluir(@PathVariable Long id) {
+    public void delete(@PathVariable Long id) {
         var doctor = doctorService.getReferenceById(id);
-        doctor.excluir();
+        doctor.delete();
     }
 
 }

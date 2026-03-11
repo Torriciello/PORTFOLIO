@@ -31,7 +31,7 @@ public class Doctor {
 
     @NotNull
     @Valid
-    private Especialidade especialidade;
+    private Specialty especialidade;
 
     private String name;
 
@@ -70,7 +70,7 @@ public class Doctor {
         }
     }
 
-    public void excluir() {
+    public void delete() {
         this.ativo = false;
     }
 
