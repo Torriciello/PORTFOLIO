@@ -1,9 +1,0 @@
-.providers {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-}
