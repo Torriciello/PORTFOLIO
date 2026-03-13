@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.api.domain.ValidationException;
 
 /**
  * Service responsible for user management, including registration with
@@ -47,7 +48,7 @@ public class UserService {
 
         // Validation: Prevent duplicate CPF entries
         if (repository.findByCpf(data.getCpf()).isPresent()) {
-            throw new RuntimeException("CPF already registered!");
+            throw new ValidationException("CPF already registered!");
         }
 
         // Encrypting the password before instantiation or saving
