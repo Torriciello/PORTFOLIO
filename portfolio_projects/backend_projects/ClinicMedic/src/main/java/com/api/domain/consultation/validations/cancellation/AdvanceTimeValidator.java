@@ -26,15 +26,19 @@ public class AdvanceTimeValidator implements ConsultationCancellationValidator {
      */
     @Override
     public void validate(CancellationDataConsultation data) {
-        // Retrieves the consultation details from the database
-        var consultation = repository.getReferenceById(data.idConsultation());
+
+        Long id = data.idConsultation();
+
+        if (id == null) {
+            throw new ValidationException("Consultation ID cannot be null");
+        }
+
+        var consultation = repository.getReferenceById(id);
+
         var now = LocalDateTime.now();
 
-        // Calculates the difference between the current time and the appointment time
         var differenceInHours = Duration.between(now, consultation.getDate()).toHours();
 
-        // Business Rule: Cancellation must happen at least 24 hours before the
-        // scheduled time
         if (differenceInHours < 24) {
             throw new ValidationException("Consultations can only be canceled with at least 24 hours notice!");
         }

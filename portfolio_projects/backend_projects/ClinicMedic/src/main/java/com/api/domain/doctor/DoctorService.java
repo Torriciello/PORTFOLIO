@@ -36,7 +36,12 @@ public class DoctorService {
      * @return A JPA entity reference (lazy loaded).
      */
     public Doctor getReferenceById(Long id) {
-        return doctorRepository.getReferenceById(id);
+
+        if (id == null) {
+            throw new IllegalArgumentException("Doctor ID cannot be null");
+        }
+        return doctorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Doctor not found"));
     }
 
     /**

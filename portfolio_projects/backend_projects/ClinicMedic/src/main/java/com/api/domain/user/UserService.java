@@ -1,10 +1,14 @@
 package com.api.domain.user;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.api.domain.ValidationException;
 
 /**
@@ -21,11 +25,7 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     /**
-     * Retrieves a user by their email. Used primarily by the authentication
-     * service.
-     * 
-     * @param email User's unique email.
-     * @return Found user or throws exception.
+     * Retrieves a user by their email.
      */
     public User findByEmail(String email) {
         return repository.findByEmail(email)
@@ -33,30 +33,62 @@ public class UserService {
     }
 
     /**
-     * Registers a new user after validating email and CPF uniqueness.
-     * Encodes the password using BCrypt before persisting.
-     * 
-     * @param data DTO containing registration details.
-     * @return The saved User entity.
+     * Registers a new user.
      */
     @Transactional
     public User save(RegisterUser data) {
-        // Validation: Prevent duplicate email entries
+
         if (repository.findByEmail(data.getEmail()).isPresent()) {
             throw new RuntimeException("Email already registered!");
         }
 
-        // Validation: Prevent duplicate CPF entries
         if (repository.findByCpf(data.getCpf()).isPresent()) {
             throw new ValidationException("CPF already registered!");
         }
 
-        // Encrypting the password before instantiation or saving
         String senhaCriptografada = passwordEncoder.encode(data.getPassword());
 
-        // Using the custom constructor you defined in the User entity
         User newUser = new User(data, senhaCriptografada);
 
         return repository.save(newUser);
+    }
+
+    /**
+     * Generates a password reset token for the user.
+     */
+    @Transactional
+    public void generatePasswordResetToken(String email) {
+
+        User user = repository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        String token = UUID.randomUUID().toString();
+
+        user.setResetToken(token);
+        user.setResetTokenExpiration(LocalDateTime.now().plusMinutes(30));
+
+        repository.save(user);
+    }
+
+    /**
+     * Resets the user's password using the reset token.
+     */
+    @Transactional
+    public void resetPassword(String token, String newPassword) {
+
+        User user = repository.findByResetToken(token)
+                .orElseThrow(() -> new RuntimeException("Invalid token"));
+
+        if (user.getResetTokenExpiration().isBefore(LocalDateTime.now())) {
+            throw new RuntimeException("Token expired");
+        }
+
+        String encryptedPassword = passwordEncoder.encode(newPassword);
+
+        user.setPassword(encryptedPassword);
+        user.setResetToken(null);
+        user.setResetTokenExpiration(null);
+
+        repository.save(user);
     }
 }

@@ -1,5 +1,6 @@
 package com.api.domain.user;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import org.hibernate.validator.constraints.br.CPF;
@@ -37,6 +38,10 @@ public class User implements UserDetails {
 
     @NotNull
     private String name;
+
+    private String resetToken;
+
+    private LocalDateTime resetTokenExpiration;
 
     @NotNull
     @Column(unique = true) // Crucial for authentication via email

@@ -45,27 +45,27 @@ public class AppointmentSchedule {
      * @return DataDetailsQuery with the confirmed appointment information.
      */
     public DataDetailsQuery schedule(DetailsConsultation data) {
-        // Basic existence checks before running complex business rules
-        if (!patientRepository.existsById(data.idPatient())) {
+
+        Long patientId = data.idPatient();
+        Long doctorId = data.idDoctor();
+
+        if (patientId == null || !patientRepository.existsById(patientId)) {
             throw new ValidationException("The provided Patient ID does not exist!");
         }
 
-        if (data.idDoctor() != null && !doctorRepository.existsById(data.idDoctor())) {
+        if (doctorId != null && !doctorRepository.existsById(doctorId)) {
             throw new ValidationException("The provided Doctor ID does not exist!");
         }
 
-        // Strategy Pattern: Runs all business rule validations (Lead time,
-        // availability, etc.)
         validators.forEach(v -> v.validate(data));
 
-        var patient = patientRepository.getReferenceById(data.idPatient());
+        var patient = patientRepository.getReferenceById(patientId);
         var doctor = chooseDoctor(data);
 
         if (doctor == null) {
             throw new ValidationException("No doctor is available for the selected date and specialty!");
         }
 
-        // Persists the new appointment
         var consultation = new Consultation(null, doctor, patient, data.date(), null);
         consultationRepository.save(consultation);
 
@@ -78,17 +78,17 @@ public class AppointmentSchedule {
      * @param data DTO containing consultation ID and cancellation reason.
      */
     public void cancel(CancellationDataConsultation data) {
-        if (!consultationRepository.existsById(data.idConsultation())) {
+
+        Long consultationId = data.idConsultation();
+
+        if (consultationId == null || !consultationRepository.existsById(consultationId)) {
             throw new ValidationException("The provided Consultation ID does not exist!");
         }
 
-        // Runs all cancellation-specific business rules (e.g., 24h advance notice)
         validatorsCancellation.forEach(v -> v.validate(data));
 
-        var consultation = consultationRepository.getReferenceById(data.idConsultation());
+        var consultation = consultationRepository.getReferenceById(consultationId);
         consultation.cancel(data.reasonCancellation());
-        // No explicit .save() needed if within a @Transactional context in the
-        // Controller
     }
 
     /**
@@ -99,16 +99,17 @@ public class AppointmentSchedule {
      * @return A Doctor entity or null if none are available.
      */
     private Doctor chooseDoctor(DetailsConsultation data) {
-        if (data.idDoctor() != null) {
-            return doctorRepository.getReferenceById(data.idDoctor());
+
+        Long doctorId = data.idDoctor();
+
+        if (doctorId != null) {
+            return doctorRepository.getReferenceById(doctorId);
         }
 
         if (data.specialty() == null) {
             throw new ValidationException("Specialty is required when a specific doctor is not chosen!");
         }
 
-        // Custom query to find an available doctor of a specific specialty at a
-        // specific time
         return doctorRepository.chooseRandomFreeDoctorDate(data.specialty(), data.date());
     }
 }
