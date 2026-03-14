@@ -8,7 +8,7 @@ O sistema permite o cadastro de médicos e pacientes, além do controle de agend
 
 # Tecnologias Utilizadas
 
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Security
 - JWT Authentication
