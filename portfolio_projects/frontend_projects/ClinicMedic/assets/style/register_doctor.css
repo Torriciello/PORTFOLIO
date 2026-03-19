@@ -1,0 +1,168 @@
+:root {
+  --verde-dark: #2d6353;
+  --verde-claro: #65a18f;
+  --azul-texto: #2d6353;
+  --cinza-borda: #cbd5e0;
+  --bg-fundo: #f8fafc;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-fundo);
+  margin: 0;
+}
+
+/* --- HEADER --- */
+.header-desktop {
+  background-color: var(--verde-dark);
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-voltar {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/* AJUSTE SOLICITADO: Título mais claro e suave */
+.new_doctor {
+  color: rgba(255, 255, 255, 0.85); /* Branco suave com opacidade */
+  margin-left: 20px;
+  font-weight: 400; /* Peso menor para leveza visual */
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* --- ESTRUTURA CENTRAL --- */
+.main-desktop {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.conteudo-central {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding: 50px 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- FORMULÁRIO --- */
+.subtitulo-formulario {
+  color: var(--azul-texto);
+  font-size: 1.1rem;
+  margin: 40px 0 20px 0;
+  font-weight: 600;
+  border-bottom: 1px solid #f0f4f8;
+  padding-bottom: 8px;
+}
+
+/* Espaçamento para não ficar amontoado */
+.input-group,
+.input-row {
+  margin-bottom: 25px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Alinhamento de proporção no Desktop */
+.flex-1 {
+  flex: 1;
+  min-width: 150px;
+}
+
+.flex-2 {
+  flex: 2;
+  min-width: 300px;
+}
+
+.input-padrao {
+  width: 100%;
+  padding: 14px;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #2d3748;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-padrao:focus {
+  border-color: var(--verde-dark);
+  box-shadow: 0 0 0 3px rgba(45, 99, 83, 0.1);
+}
+
+/* --- SELECT E SETA --- */
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-custom {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.select-wrapper .seta-clique {
+  position: absolute;
+  right: 15px;
+  pointer-events: none;
+  color: var(--verde-dark);
+  font-size: 24px;
+}
+
+/* --- BOTÕES --- */
+.botoes-form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.btn-concluir {
+  background-color: var(--verde-claro);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-concluir:hover {
+  background-color: var(--verde-dark);
+  transform: translateY(-1px);
+}
+
+.btn-cancelar {
+  background-color: transparent;
+  color: var(--azul-texto);
+  padding: 15px;
+  border: 2px solid var(--azul-texto);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+  background-color: rgba(45, 99, 83, 0.05);
+}

@@ -1,0 +1,93 @@
+:root {
+  --verde-principal: #2d6353;
+  --azul-escuro: #2d6353;
+  --cinza-texto: #4a5568;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.conteudo-central {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 35px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px #2d6353;
+}
+
+.avatar-desativa-container {
+  background-color: var(--azul-escuro);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.avatar-desativa {
+  font-size: 60px !important;
+  color: white;
+}
+
+.titulo-centralizado {
+  color: var(--azul-escuro);
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.texto-aviso-container {
+  color: var(--cinza-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.texto-aviso-container p {
+  margin: 0;
+}
+
+.botoes-modal-erro {
+  width: 100%;
+}
+
+.btn-entendi {
+  background-color: var(--azul-escuro);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+
+.btn-entendi:hover {
+  filter: brightness(0.9);
+}

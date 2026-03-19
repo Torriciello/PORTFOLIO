@@ -1,0 +1,132 @@
+:root {
+  --verde-principal: #2d6353;
+  --verde-hover: #244f42;
+  --azul-escuro: #2d6353;
+  --azul-destaque: #2d6353;
+  --cinza-texto: #2d6353;
+  --cinza-claro: #f4f5f7;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.conteudo-central {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-desativa-container {
+  background-color: var(--azul-escuro);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.avatar-desativa {
+  font-size: 50px !important;
+  color: white;
+}
+
+.titulo-centralizado {
+  color: var(--azul-escuro);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.bloco-medico-desativa {
+  display: flex;
+  background-color: var(--cinza-claro);
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.faixa-destaque-vermelha {
+  width: 6px;
+  background-color: var(--azul-destaque);
+}
+
+.info-texto-desativa {
+  padding: 12px;
+  text-align: left;
+}
+
+.nome-medico-desativa {
+  display: block;
+  color: var(--azul-escuro);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.sub-info-desativa {
+  display: block;
+  color: var(--cinza-texto);
+  font-size: 0.85rem;
+}
+
+.texto-aviso-container {
+  color: var(--cinza-texto);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.botoes-modal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-perigo-principal {
+  background-color: var(--verde-principal);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-cancelar {
+  background-color: white;
+  color: var(--azul-escuro);
+  border: 2px solid var(--azul-escuro);
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}

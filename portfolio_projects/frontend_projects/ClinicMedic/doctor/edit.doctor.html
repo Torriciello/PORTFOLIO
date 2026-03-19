@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/style/edit_doctor.css" />
+    <title>Editar Perfil - ClinicMedic</title>
+  </head>
+
+  <body>
+    <header class="header-desktop">
+      <div class="header-left">
+        <a href="./doctor.html" class="btn-voltar">
+          <span class="material-icons">chevron_left</span>
+        </a>
+        <h2 class="header-title">Editar</h2>
+      </div>
+
+      <div class="header-right">
+        <div class="menu-container">
+          <span class="material-icons btn-menu">more_vert</span>
+          <div class="dropdown-content">
+            <a href="./doctor.html">Médicos</a>
+            <a href="#">Pacientes</a>
+            <a href="#">Consultas</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-desktop"></main>
+    <main class="main-desktop">
+      <div class="conteudo-central">
+        <form class="formulario-clinica">
+          <h3 class="subtitulo-formulario">Profissional</h3>
+          <div class="input-group">
+            <input
+              type="text"
+              value="Brenda de Almeida"
+              class="input-padrao"
+              required
+            />
+          </div>
+
+          <div class="input-row">
+            <div class="select-wrapper flex-2">
+              <select class="input-padrao select-custom">
+                <option value="1" selected>Ortopedista</option>
+                <option value="2">Cardiologia</option>
+              </select>
+              <span class="material-icons seta-clique">expand_more</span>
+            </div>
+            <input type="text" value="47.889-PR" class="input-padrao flex-1" />
+          </div>
+
+          <h3 class="subtitulo-formulario">Contatos</h3>
+          <div class="input-group">
+            <input
+              type="email"
+              value="brenda.almeida@med.com.br"
+              class="input-padrao"
+            />
+          </div>
+          <div class="input-group">
+            <input type="tel" value="(51) 99999-8888" class="input-padrao" />
+          </div>
+
+          <h3 class="subtitulo-formulario">Endereço profissional</h3>
+          <div class="input-group">
+            <input
+              type="text"
+              value="Av. das Graças Altas"
+              class="input-padrao"
+            />
+          </div>
+
+          <div class="input-row">
+            <input type="text" value="633" class="input-padrao flex-1" />
+            <input
+              type="text"
+              placeholder="Complemento"
+              class="input-padrao flex-2"
+            />
+          </div>
+
+          <div class="input-group">
+            <input type="text" value="Curitiba" class="input-padrao" />
+          </div>
+
+          <div class="input-row">
+            <div class="select-wrapper flex-1">
+              <select class="input-padrao select-custom">
+                <option value="PR" selected>PR</option>
+                <option value="SP">SP</option>
+              </select>
+              <span class="material-icons seta-clique">expand_more</span>
+            </div>
+            <input type="text" value="66.777-100" class="input-padrao flex-2" />
+          </div>
+
+          <div class="link-desativar-container">
+            <a href="#" class="link-desativar">Desativar este perfil</a>
+          </div>
+
+          <div class="botoes-form-footer">
+            <button type="submit" class="btn-concluir">Concluir edição</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
