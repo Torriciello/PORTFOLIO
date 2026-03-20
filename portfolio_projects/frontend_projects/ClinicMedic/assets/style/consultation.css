@@ -1,0 +1,169 @@
+:root {
+  --verde-principal: #2d6353;
+  --azul-escuro: #2d6353;
+  --azul-claro: #90cdf4;
+  --cinza-texto: #4a5568;
+  --cinza-claro: #edf2f7;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7fafc;
+  margin: 0;
+}
+
+.header-desktop {
+  background-color: var(--verde-principal);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-voltar {
+  color: white;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.conteudo-central {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #a0aec0;
+}
+
+.divisor-data {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 25px 0 15px 0;
+}
+
+.data-texto {
+  color: var(--azul-claro);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.data-completa {
+  font-weight: 400;
+}
+
+.decoracao-data {
+  color: var(--azul-claro);
+  font-size: 20px;
+}
+
+.consulta-item {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 15px 0;
+}
+
+.consulta-resumo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  cursor: pointer;
+}
+
+.hora-info {
+  display: flex;
+  gap: 20px;
+}
+
+.txt-hora {
+  font-weight: 600;
+  color: var(--azul-escuro);
+  min-width: 50px;
+}
+
+.dados-agendamento {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-medico {
+  color: var(--azul-escuro);
+  font-weight: 600;
+}
+
+.sub-info-medico,
+.tag-paciente {
+  font-size: 0.85rem;
+  color: var(--cinza-texto);
+}
+
+.nome-paciente {
+  color: var(--azul-escuro);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.botoes-acao-consulta {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-left: 70px;
+}
+
+.btn-editar-consulta,
+.btn-cancelar-consulta {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  border: 1px solid var(--azul-escuro);
+  color: var(--azul-escuro);
+}
+
+.footer-button {
+  margin-top: 40px;
+}
+
+.btn-principal-agendar {
+  width: 100%;
+  background-color: var(--azul-escuro);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}

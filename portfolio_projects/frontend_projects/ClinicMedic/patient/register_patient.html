@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>Registro de Paciente</title>
+  <link rel="stylesheet" href="../assets/style/register_patient.css">
+</head>
+
+<body>
+  <header class="header-desktop">
+    <a href="patient.html" class="btn-voltar">
+      <span class="material-icons">chevron_left</span>
+    </a>
+    <h2 class="new_doctor">Cadastrar Novo Paciente</h2>
+  </header>
+
+  <main class="main-desktop">
+    <div class="conteudo-central">
+      <form class="formulario-clinica">
+        <h3 class="subtitulo-formulario">Paciente</h3>
+        <div class="input-group">
+          <input type="text" placeholder="Nome completo" class="input-padrao" required />
+        </div>
+
+        <div class="input-group">
+          <input type="text" placeholder="CPF" class="input-padrao" required />
+        </div>
+
+        <h3 class="subtitulo-formulario">Contatos</h3>
+        <div class="input-group">
+          <input type="email" placeholder="E-mail" class="input-padrao" />
+        </div>
+        <div class="input-group">
+          <input type="tel" placeholder="Telefone ou celular" class="input-padrao" />
+        </div>
+
+        <h3 class="subtitulo-formulario">Endereço profissional</h3>
+        <div class="input-group">
+          <input type="text" placeholder="Logradouro" class="input-padrao" />
+        </div>
+
+        <div class="input-row">
+          <input type="text" placeholder="Número" class="input-padrao flex-1" />
+          <input type="text" placeholder="Complemento" class="input-padrao flex-2" />
+        </div>
+
+        <div class="input-group">
+          <input type="text" placeholder="Cidade" class="input-padrao" />
+        </div>
+
+        <div class="input-row">
+          <div class="select-wrapper flex-1">
+            <select class="input-padrao select-custom">
+              <option value="" disabled selected>UF</option>
+              <option value="SP">SP</option>
+              <option value="RJ">RJ</option>
+            </select>
+            <span class="material-icons seta-clique">expand_more</span>
+          </div>
+          <input type="text" placeholder="CEP" class="input-padrao flex-2" />
+        </div>
+        <div class="botoes-form-footer">
+          <button type="submit" class="btn-concluir">
+            Concluir cadastro
+          </button>
+          <button type="button" class="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

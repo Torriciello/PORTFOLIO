@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/style/consultation.css" />
+    <title>Consultas - ClinicMedic</title>
+  </head>
+  <body>
+    <header class="header-desktop">
+      <div class="header-left">
+        <a href="../index.html" class="btn-voltar">
+          <span class="material-icons">chevron_left</span>
+        </a>
+        <h2 class="header-title">Consultas</h2>
+      </div>
+      <div class="header-right">
+        <span class="material-icons btn-menu">more_vert</span>
+      </div>
+    </header>
+
+    <main class="main-desktop">
+      <div class="conteudo-central">
+        <div class="search-container">
+          <input type="text" placeholder="Pesquisar" class="search-input" />
+          <span class="material-icons search-icon">search</span>
+        </div>
+
+        <div class="lista-consultas">
+          <div class="divisor-data">
+            <span class="data-texto"
+              >Hoje <span class="data-completa">(18/08/2022)</span></span
+            >
+          </div>
+
+          <details class="consulta-item">
+            <summary class="consulta-resumo">
+              <div class="hora-info">
+                <span class="txt-hora">9h00</span>
+                <div class="dados-agendamento">
+                  <span class="nome-medico">Adriano Moreira Sales</span>
+                  <span class="sub-info-medico"
+                    >Ginecologista | CRM 15.879-SP</span
+                  >
+                  <span class="nome-paciente">Marcela Trindade</span>
+                  <span class="tag-paciente">Paciente</span>
+                </div>
+              </div>
+              <span class="material-icons seta-clique">expand_more</span>
+            </summary>
+          </details>
+
+          <div class="divisor-data">
+            <span class="data-texto">19/08/2022</span>
+          </div>
+
+          <details class="consulta-item" open>
+            <summary class="consulta-resumo">
+              <div class="hora-info">
+                <span class="txt-hora">10h00</span>
+                <div class="dados-agendamento">
+                  <span class="nome-medico">Brenda de Almeida</span>
+                  <span class="sub-info-medico"
+                    >Ortopedista | CRM 47.889-PR</span
+                  >
+                  <span class="nome-paciente">Pâmela Lopes</span>
+                  <span class="tag-paciente">Paciente</span>
+                </div>
+              </div>
+              <span class="material-icons seta-clique">expand_less</span>
+            </summary>
+            <div class="botoes-acao-consulta">
+              <button class="btn-editar-consulta">Editar</button>
+              <button class="btn-cancelar-consulta">Cancelar consulta</button>
+            </div>
+          </details>
+        </div>
+
+        <div class="footer-button">
+          <button class="btn-principal-agendar">Agendar nova consulta</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
