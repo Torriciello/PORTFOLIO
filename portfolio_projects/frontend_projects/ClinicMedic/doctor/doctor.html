@@ -4,17 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/style/doctor.css" />
-
     <title>Médicos - ClinicMedic</title>
   </head>
 
@@ -38,67 +32,16 @@
         </div>
       </div>
     </header>
+
     <main class="main-desktop">
       <div class="conteudo-central">
         <div class="search-container">
-          <input type="text" placeholder="Pesquisar..." class="search-input" />
+          <input type="text" id="searchInput" placeholder="Pesquisar por nome ou CRM..." class="search-input" />
           <span class="material-icons search-icon">search</span>
         </div>
 
-        <div class="grupo-alfabetico">
-          <div class="letra-divisor">
-            <span>A</span>
-          </div>
-
-          <details class="medico-item">
-            <summary class="medico-resumo">
-              <div class="info-texto">
-                <span class="nome-medico">Amanda Siqueira</span>
-                <span class="sub-info">Oftalmologista | CRM 65.789-SP</span>
-              </div>
-              <span class="material-icons seta-clique">expand_more</span>
-            </summary>
-
-            <div class="detalhes-expansiveis">
-              <div class="dados-contato">
-                <p><strong>E-mail:</strong> amanda@medico.com.br</p>
-                <p><strong>Telefone:</strong> (11) 98888-7777</p>
-                <p>
-                  <strong>Endereço:</strong> Av. das Graças Altas, 633 -
-                  Curitiba/PR
-                </p>
-              </div>
-
-              <div class="botoes-acao">
-                <button class="btn-secundario">Editar</button>
-                <button class="btn-perigo">Desativar perfil</button>
-              </div>
+        <div id="doctorsList" class="grupo-alfabetico">
             </div>
-          </details>
-
-          <div class="letra-divisor">
-            <span>B</span>
-          </div>
-
-          <details class="medico-item">
-            <summary class="medico-resumo">
-              <div class="info-texto">
-                <span class="nome-medico">Bernardo Oliveira</span>
-                <span class="sub-info">Pediatra | CRM 15.879-SP</span>
-              </div>
-              <span class="material-icons seta-clique">expand_more</span>
-            </summary>
-
-            <div class="detalhes-expansiveis">
-              <p>bernardo@medico.com.br</p>
-              <p>(11) 97777-6666</p>
-              <div class="botoes-acao">
-                <button class="btn-secundario">Editar</button>
-                <button class="btn-perigo">Desativar perfil</button>
-              </div>
-            </div>
-          </details>
-        </div>
 
         <div class="footer-button">
           <a href="./register_doctor.html" class="btn-principal-desktop">
@@ -107,5 +50,7 @@
         </div>
       </div>
     </main>
+
+    <script src="../assets/js/doctor_list.js"></script>
   </body>
 </html>
