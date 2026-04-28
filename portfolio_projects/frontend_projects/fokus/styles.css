@@ -5,6 +5,9 @@
   --fundo-card-timer: rgba(20, 68, 128, 0.3);
   --lils: #b872ff;
   --linear-botes: linear-gradient(180deg, #b872ff 0%, #144480 100%);
+  --azul-profundo: #01080e;
+  --fundo-card: rgba(255, 255, 255, 0.5);
+  --fundo-card-concludo: rgba(0, 244, 191, 0.4);
 }
 
 [data-contexto="foco"] {
@@ -248,17 +251,7 @@ h6 {
   visibility: hidden;
 }
 
-:root {
-  --color-primary: #123456;
-  --color-secondary: #fff;
-  --azul-royal: #144480;
-  --fundo-card-timer: rgba(20, 68, 128, 0.3);
-  --lils: #b872ff;
-  --linear-botes: linear-gradient(180deg, #b872ff 0%, #144480 100%);
-  --azul-profundo: #01080e;
-  --fundo-card: rgba(255, 255, 255, 0.5);
-  --fundo-card-concludo: rgba(0, 244, 191, 0.4);
-}
+/* fim - toggle */
 
 /* dropdown */
 .dropdown-container {
@@ -302,6 +295,13 @@ h6 {
 }
 
 /* fim - dropdown */
+
+/* Para Tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .app__section-banner-container {
+    width: 48rem;
+  }
+}
 
 /* Para Celulares */
 @media (max-width: 767px) {
@@ -528,28 +528,4 @@ h6 {
   color: #e6e6e6;
   opacity: 0.8;
   cursor: not-allowed;
-}
-
-/* fim - toggle */
-
-/* Para Tablets */
-@media (max-width: 1024px) and (min-width: 768px) {
-  .app__section-banner-container {
-    width: 48rem;
-  }
-}
-
-/* Para Celulares */
-@media (max-width: 767px) {
-  .app__section-banner-container {
-    width: 32rem;
-  }
-
-  .app__title {
-    font-size: 2.6rem;
-  }
-
-  .app__card-timer {
-    font-size: 6rem;
-  }
 }
